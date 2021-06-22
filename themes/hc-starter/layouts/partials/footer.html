@@ -1,0 +1,11 @@
+<footer class="Footer" role="contentinfo">
+  <nav class="FooterNav" aria-label="Footer Navigation">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.footer }}
+    <a class="FooterNav-link{{if or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) }} active{{end}}"
+      href="{{.URL}}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+  <p>Content &copy;{{ now.Format "2006"}} Harry Cresswell, unless otherwise specified. <a href="/feeds/">RSS Feeds</a>.</p>
+  <!--<div id="wcb" class="carbonbadge"></div>-->
+</footer>

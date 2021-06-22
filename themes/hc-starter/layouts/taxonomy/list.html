@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <header class="Hero Hero--list">
+    <h1 class="Hero-title">{{ .Title }}</h1>
+  </header>
+
+  <section class="TagList">
+  {{ range .Site.Taxonomies.topics }}
+    <article class="TagListItem">
+      <h2 class="TagListItem-title">
+        <a class="u-url" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}
+      </h2>
+    </article>
+  {{ end }}
+  </section>
+
+   
+{{ end }}
